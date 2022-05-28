@@ -38,7 +38,7 @@ class _DetailPageState extends State<DetailPage> {
                   height: 350,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: NetworkImage("http://mark.bslmeivu.com/uploads/"+detail.places.img),
+                        image: NetworkImage("http://mark.bslmeiyu.com/uploads/"+detail.places.img),
                         fit: BoxFit.cover
                     ),
                   ),
@@ -58,7 +58,7 @@ class _DetailPageState extends State<DetailPage> {
               Positioned(
                 top: 330,
                 child: Container(
-                  padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
+                  padding: const EdgeInsets.only(left: 10, right: 10, top: 30),
                   width: MediaQuery.of(context).size.width,
                   height: 500,
                   decoration: BoxDecoration(
@@ -74,8 +74,8 @@ class _DetailPageState extends State<DetailPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          AppLargeText(text: "Yosemite"),
-                          AppLargeText(text: "\$ 300")
+                          AppLargeText(text: detail.places.name),
+                          AppLargeText(text: "\$"+detail.places.price.toString())
                         ],
                       ),
                       SizedBox(height: 10,),
@@ -83,7 +83,7 @@ class _DetailPageState extends State<DetailPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Icon(Icons.location_on, color: Colors.indigo,),
-                          AppText(text: "USA, California", color: Colors.black,)
+                          AppText(text: detail.places.location, color: Colors.black,)
                         ],
                       ),
                       SizedBox(height: 10,),
@@ -91,11 +91,11 @@ class _DetailPageState extends State<DetailPage> {
                         children: [
                           Wrap(
                             children: List.generate(5, (index){
-                              return Icon(Icons.star, color:index<gottenStars?Colors.amber:AppColors.textColor2,);
+                              return Icon(Icons.star, color:index<detail.places.stars?Colors.amber:AppColors.textColor2,);
                             }),
                           ),
-                          SizedBox(width: 10,),
-                          AppText(text: "(3.0)", color:AppColors.textColor2,)
+                          SizedBox(width: 5,),
+                          AppText(text: "(5.0)", color:AppColors.textColor2,)
                         ],
                       ),
                       SizedBox(height: 25,),
@@ -125,9 +125,9 @@ class _DetailPageState extends State<DetailPage> {
                           })
                       ),
                       SizedBox(height: 20,),
-                      AppLargeText(text: "Description", color: Colors.indigo.shade900.withOpacity(0.8), size: 20),
+                      AppLargeText(text: "Description", color: Colors.indigo.shade900.withOpacity(0.8), size: 10),
                       SizedBox(height: 5),
-                      AppText(text: "You must go for a tour. Travelling helps to get rid of pressure. Go and get the pleasure of being in the heart of mountains.", color: AppColors.mainTextColor )
+                      AppText(text: detail.places.description, color: AppColors.mainTextColor )
                     ],
                   ),
                 ),

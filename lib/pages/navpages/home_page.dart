@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     borderRadius: BorderRadius.circular(10),
                                     color: Colors.white,
                                     image: DecorationImage(
-                                        image: NetworkImage("http://mark.bslmeivu.com/uploads/"),
+                                        image: NetworkImage("http://mark.bslmeiyu.com/uploads/"+info[index].img),
                                         fit: BoxFit.cover,
                                     ),
                                   ),

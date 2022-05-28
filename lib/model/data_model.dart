@@ -22,7 +22,7 @@ class DataModel{
   people: json["people"],
   stars: json["stars"],
   description: json["description"],
-  location: json["description"],
+  location: json["location"],
     );
   }
 }
